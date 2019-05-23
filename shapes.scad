@@ -24,7 +24,7 @@
 //hexagram(height, depth);
 //rightTriangle(adjacent, opposite, depth);
 //equiTriangle(side, depth);
-//12ptStar(height, depth);
+//twelvePtStar(height, depth);
 
 //----------------------
 
@@ -137,7 +137,7 @@ module equiTriangle(side, height) {
   }
 }
 
-module 12ptStar(size, height) {
+module twelvePtStar(size, height) {
   starNum = 3;
   starAngle = 360/starNum;
   for (s = [1:starNum]) {
