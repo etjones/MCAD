@@ -35,16 +35,16 @@ ExtendedCap =0.5;
 CutCap =-0.5;
 
 
-module fromTo(from=[0,0,0], to=[1*m,0,0], size=[1*cm, 1*cm], align=[CENTER, CENTER], material=[0.5, 0.5, 0.5], name="", endExtras=[0,0], endCaps=[FlatCap, FlatCap], rotation=[0,0,0], printString=true) {
+module fromTo(from_=[0,0,0], to=[1*m,0,0], size=[1*cm, 1*cm], align=[CENTER, CENTER], material=[0.5, 0.5, 0.5], name="", endExtras=[0,0], endCaps=[FlatCap, FlatCap], rotation=[0,0,0], printString=true) {
 
-  angle = angleBetweenTwoPoints(from, to);
-  length = distance(from, to) + endCaps[0]*size[0] + endCaps[1]*size[0] + endExtras[0] + endExtras[1];
+  angle = angleBetweenTwoPoints(from_, to);
+  length = distance(from_, to) + endCaps[0]*size[0] + endCaps[1]*size[0] + endExtras[0] + endExtras[1];
 
   if (length > 0) {
     if (printString) echo(str("  " ,name, " ", size[0], "mm x ", size[1], "mm, length ",length,"mm"));
 
     color(material)
-      translate(from)
+      translate(from_)
         rotate(angle)
           translate( [ -endCaps[0]*size[0] - endExtras[0], size[0]*(-0.5-align[0]), size[1]*(-0.5+align[1]) ] )
             rotate(rotation)
